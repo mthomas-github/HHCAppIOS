@@ -1,17 +1,21 @@
-type Task
-  @model
-  @auth(
-    rules: [
-      { allow: groups, groups: ["Managers"], queries: null, mutations: [create, update, delete] }
-      { allow: groups, groups: ["Employees"], queries: [get, list], mutations: null }
-    ]
-  ) {
+enum Phase {
+   New
+   Interested
+   SignUp
+   Waitlist
+   Closed
+ }
+ 
+type Trip @model {
   id: ID!
-  title: String!
-  description: String
-  status: String
-}
-type PrivateNote @model @auth(rules: [{ allow: owner }]) {
-  id: ID!
-  content: String!
+  name: String!
+  description: String!
+  total: String
+  coverImage: String!
+  phase: Phase
+  startDate: AWSDateTime!
+  endDate: AWSDateTime!
+  tenative: Boolean!
+  gallery: [String]
+  members: [String]
 }
