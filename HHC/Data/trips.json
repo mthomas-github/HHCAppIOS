@@ -1,0 +1,75 @@
+[
+  {
+    "id": 1,
+    "name": "Zion 2021 Explore, Hike & Camp Adventure",
+    "description": "Wanna go camping with HHC in amazing Zion National Park? We'll run it just like our awesome camping/ hiking adventures to Grand Canyon where we provide roundtrip transportation, all the reservations, trails to hike, and a cool fun packed itinerary?!",
+    "total": "499.00",
+    "image": "zion",
+    "phase": 1,
+    "startDate": "10/17/2021",
+    "endDate": "10/20/2021",
+    "tenative": false,
+    "gallery" : [
+        "zion",
+        "northenlights",
+        "yosemite",
+        "havasupai"
+    ]
+    "members" : []
+  },
+  {
+    "id": 2,
+    "name": "HHC Northern Lights Adventure - aurora borealis.",
+    "description": "Our Northern Lights adventure is many things – spectacular, spiritual and awe-inspiring to name a few. A natural phenomenon better viewed than explained, we'll see the Northern Lights in Fairbanks, Alaska under the velvety night sky, where the purples and greens of the Aurora Borealis dance some 100 miles high into the distance. ",
+    "total": "1600.00",
+    "image": "northenlights",
+    "phase": 1,
+    "startDate": "09/03/2021",
+    "endDate": "09/07/2021",
+    "tenative": false,
+    "gallery" : [
+        "zion",
+        "northenlights",
+        "yosemite",
+        "havasupai"
+    ]
+    "members" : []
+  },
+  {
+    "id": 3,
+    "name": "Yosemite Boujee Winter Adventure",
+    "description": "Wanna go winter boujee camping again with HHC in amazing Yosemite National Park? We'll run it just like all our awesome HHC overnight adventures where we provide roundtrip transportation, all the reservations, permits, cabins and trails to hike & snowshoe. With a very cool fun packed itinerary?!",
+    "total": "725.00",
+    "image": "yosemite",
+    "phase": 1,
+    "startDate": "02/12/2021",
+    "endDate": "02/15/2021",
+    "tenative": false,
+    "gallery" : [
+        "zion",
+        "northenlights",
+        "yosemite",
+        "havasupai"
+    ],
+    "members" : []
+  },
+  {
+    "id": 4,
+    "name": "Grand Canyon / Havasupai Adventure",
+    "description": "Nestled 3,000 feet deep into Havasu Canyon lay the land of the Havasupai. The area is known around the world for its bluish-green watered pools of Havasu Creek and spectacular waterfalls.",
+    "total": "1335.00",
+    "image": "havasupai",
+    "phase": 1,
+    "startDate": "04/05/2021",
+    "endDate": "04/09/2021",
+    "tenative": false,
+    "gallery" : [
+        "zion",
+        "northenlights",
+        "yosemite",
+        "havasupai"
+    ]
+    "members" : []
+  },
+]
+

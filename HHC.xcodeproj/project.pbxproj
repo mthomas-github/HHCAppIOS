@@ -13,8 +13,30 @@
 		3182A10A2561C2A8004E757B /* Trip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3182A1062561C2A8004E757B /* Trip.swift */; };
 		3182A10B2561C2A8004E757B /* Trip+Schema.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3182A1072561C2A8004E757B /* Trip+Schema.swift */; };
 		3182A10C2561C2A8004E757B /* Phase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3182A1082561C2A8004E757B /* Phase.swift */; };
-		31A75DD82561BD4800A799F8 /* HHCApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A75DD72561BD4800A799F8 /* HHCApp.swift */; };
-		31A75DDA2561BD4800A799F8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A75DD92561BD4800A799F8 /* ContentView.swift */; };
+		3182A12E2561C34C004E757B /* TripStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3182A1102561C34B004E757B /* TripStore.swift */; };
+		3182A12F2561C34C004E757B /* SessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3182A1112561C34B004E757B /* SessionManager.swift */; };
+		3182A1302561C34C004E757B /* SettingsRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3182A1142561C34B004E757B /* SettingsRowView.swift */; };
+		3182A1312561C34C004E757B /* SettingsLabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3182A1152561C34B004E757B /* SettingsLabelView.swift */; };
+		3182A1322561C34C004E757B /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3182A1172561C34B004E757B /* LoginView.swift */; };
+		3182A1332561C34C004E757B /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3182A1182561C34B004E757B /* SignUpView.swift */; };
+		3182A1342561C34C004E757B /* ConfirmationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3182A1192561C34B004E757B /* ConfirmationView.swift */; };
+		3182A1352561C34C004E757B /* NewTripView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3182A11B2561C34B004E757B /* NewTripView.swift */; };
+		3182A1362561C34C004E757B /* HeadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3182A11D2561C34B004E757B /* HeadingView.swift */; };
+		3182A1372561C34C004E757B /* TripListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3182A11E2561C34B004E757B /* TripListItemView.swift */; };
+		3182A1382561C34C004E757B /* CoverImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3182A11F2561C34B004E757B /* CoverImageView.swift */; };
+		3182A1392561C34C004E757B /* TripDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3182A1202561C34B004E757B /* TripDetailView.swift */; };
+		3182A13A2561C34C004E757B /* InsetGalleryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3182A1212561C34B004E757B /* InsetGalleryView.swift */; };
+		3182A13B2561C34C004E757B /* TripExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3182A1232561C34C004E757B /* TripExtension.swift */; };
+		3182A13C2561C34C004E757B /* CodableBundleExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3182A1242561C34C004E757B /* CodableBundleExtension.swift */; };
+		3182A13D2561C34C004E757B /* covers.json in Resources */ = {isa = PBXBuildFile; fileRef = 3182A1262561C34C004E757B /* covers.json */; };
+		3182A13E2561C34C004E757B /* trips.json in Resources */ = {isa = PBXBuildFile; fileRef = 3182A1272561C34C004E757B /* trips.json */; };
+		3182A13F2561C34C004E757B /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3182A1292561C34C004E757B /* DashboardView.swift */; };
+		3182A1402561C34C004E757B /* AdminView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3182A12A2561C34C004E757B /* AdminView.swift */; };
+		3182A1412561C34C004E757B /* HHCApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3182A12B2561C34C004E757B /* HHCApp.swift */; };
+		3182A1422561C34C004E757B /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3182A12C2561C34C004E757B /* SettingView.swift */; };
+		3182A1432561C34C004E757B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3182A12D2561C34C004E757B /* ContentView.swift */; };
+		3182A1582561CD67004E757B /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3182A1572561CD67004E757B /* ImagePicker.swift */; };
+		3182A15F2561EF2E004E757B /* CustomPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3182A15E2561EF2E004E757B /* CustomPickerView.swift */; };
 		31A75DDC2561BD4800A799F8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 31A75DDB2561BD4800A799F8 /* Assets.xcassets */; };
 		31A75DDF2561BD4800A799F8 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 31A75DDE2561BD4800A799F8 /* Preview Assets.xcassets */; };
 		9DB2DE7E9C7A50E2F2F5A9DE /* Pods_HHC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9F2634DA2B2DB4960C3CE7A /* Pods_HHC.framework */; };
@@ -27,9 +49,31 @@
 		3182A1062561C2A8004E757B /* Trip.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Trip.swift; sourceTree = "<group>"; };
 		3182A1072561C2A8004E757B /* Trip+Schema.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Trip+Schema.swift"; sourceTree = "<group>"; };
 		3182A1082561C2A8004E757B /* Phase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Phase.swift; sourceTree = "<group>"; };
+		3182A1102561C34B004E757B /* TripStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TripStore.swift; sourceTree = "<group>"; };
+		3182A1112561C34B004E757B /* SessionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionManager.swift; sourceTree = "<group>"; };
+		3182A1142561C34B004E757B /* SettingsRowView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsRowView.swift; sourceTree = "<group>"; };
+		3182A1152561C34B004E757B /* SettingsLabelView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsLabelView.swift; sourceTree = "<group>"; };
+		3182A1172561C34B004E757B /* LoginView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		3182A1182561C34B004E757B /* SignUpView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
+		3182A1192561C34B004E757B /* ConfirmationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfirmationView.swift; sourceTree = "<group>"; };
+		3182A11B2561C34B004E757B /* NewTripView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewTripView.swift; sourceTree = "<group>"; };
+		3182A11D2561C34B004E757B /* HeadingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeadingView.swift; sourceTree = "<group>"; };
+		3182A11E2561C34B004E757B /* TripListItemView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TripListItemView.swift; sourceTree = "<group>"; };
+		3182A11F2561C34B004E757B /* CoverImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoverImageView.swift; sourceTree = "<group>"; };
+		3182A1202561C34B004E757B /* TripDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TripDetailView.swift; sourceTree = "<group>"; };
+		3182A1212561C34B004E757B /* InsetGalleryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InsetGalleryView.swift; sourceTree = "<group>"; };
+		3182A1232561C34C004E757B /* TripExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TripExtension.swift; sourceTree = "<group>"; };
+		3182A1242561C34C004E757B /* CodableBundleExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CodableBundleExtension.swift; sourceTree = "<group>"; };
+		3182A1262561C34C004E757B /* covers.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = covers.json; sourceTree = "<group>"; };
+		3182A1272561C34C004E757B /* trips.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = trips.json; sourceTree = "<group>"; };
+		3182A1292561C34C004E757B /* DashboardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardView.swift; sourceTree = "<group>"; };
+		3182A12A2561C34C004E757B /* AdminView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdminView.swift; sourceTree = "<group>"; };
+		3182A12B2561C34C004E757B /* HHCApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HHCApp.swift; sourceTree = "<group>"; };
+		3182A12C2561C34C004E757B /* SettingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
+		3182A12D2561C34C004E757B /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		3182A1572561CD67004E757B /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
+		3182A15E2561EF2E004E757B /* CustomPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPickerView.swift; sourceTree = "<group>"; };
 		31A75DD42561BD4800A799F8 /* HHC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HHC.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		31A75DD72561BD4800A799F8 /* HHCApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HHCApp.swift; sourceTree = "<group>"; };
-		31A75DD92561BD4800A799F8 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		31A75DDB2561BD4800A799F8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		31A75DDE2561BD4800A799F8 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		31A75DE02561BD4800A799F8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -70,11 +114,99 @@
 			path = amplify/generated/models;
 			sourceTree = SOURCE_ROOT;
 		};
+		3182A10F2561C34B004E757B /* Stores */ = {
+			isa = PBXGroup;
+			children = (
+				3182A1102561C34B004E757B /* TripStore.swift */,
+			);
+			path = Stores;
+			sourceTree = "<group>";
+		};
+		3182A1122561C34B004E757B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				3182A1132561C34B004E757B /* Settings */,
+				3182A1162561C34B004E757B /* Auth */,
+				3182A11A2561C34B004E757B /* Admin */,
+				3182A11C2561C34B004E757B /* Dashboard */,
+				3182A15E2561EF2E004E757B /* CustomPickerView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		3182A1132561C34B004E757B /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				3182A1142561C34B004E757B /* SettingsRowView.swift */,
+				3182A1152561C34B004E757B /* SettingsLabelView.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		3182A1162561C34B004E757B /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				3182A1172561C34B004E757B /* LoginView.swift */,
+				3182A1182561C34B004E757B /* SignUpView.swift */,
+				3182A1192561C34B004E757B /* ConfirmationView.swift */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
+		3182A11A2561C34B004E757B /* Admin */ = {
+			isa = PBXGroup;
+			children = (
+				3182A11B2561C34B004E757B /* NewTripView.swift */,
+			);
+			path = Admin;
+			sourceTree = "<group>";
+		};
+		3182A11C2561C34B004E757B /* Dashboard */ = {
+			isa = PBXGroup;
+			children = (
+				3182A11D2561C34B004E757B /* HeadingView.swift */,
+				3182A11E2561C34B004E757B /* TripListItemView.swift */,
+				3182A11F2561C34B004E757B /* CoverImageView.swift */,
+				3182A1202561C34B004E757B /* TripDetailView.swift */,
+				3182A1212561C34B004E757B /* InsetGalleryView.swift */,
+			);
+			path = Dashboard;
+			sourceTree = "<group>";
+		};
+		3182A1222561C34C004E757B /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				3182A1232561C34C004E757B /* TripExtension.swift */,
+				3182A1242561C34C004E757B /* CodableBundleExtension.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		3182A1252561C34C004E757B /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				3182A1262561C34C004E757B /* covers.json */,
+				3182A1272561C34C004E757B /* trips.json */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		3182A1282561C34C004E757B /* App */ = {
+			isa = PBXGroup;
+			children = (
+				3182A1292561C34C004E757B /* DashboardView.swift */,
+				3182A12A2561C34C004E757B /* AdminView.swift */,
+				3182A12B2561C34C004E757B /* HHCApp.swift */,
+				3182A12C2561C34C004E757B /* SettingView.swift */,
+				3182A12D2561C34C004E757B /* ContentView.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
 		31A75DCB2561BD4800A799F8 = {
 			isa = PBXGroup;
 			children = (
 				31A75DD62561BD4800A799F8 /* HHC */,
-				31A75DD52561BD4800A799F8 /* Products */,
 				48C1283227A259D63CD02F56 /* Pods */,
 				23749D29ACD3A4214B609D30 /* Frameworks */,
 			);
@@ -86,19 +218,26 @@
 				31A75DD42561BD4800A799F8 /* HHC.app */,
 			);
 			name = Products;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		31A75DD62561BD4800A799F8 /* HHC */ = {
 			isa = PBXGroup;
 			children = (
+				3182A1282561C34C004E757B /* App */,
+				3182A1252561C34C004E757B /* Data */,
+				3182A1222561C34C004E757B /* Extension */,
+				3182A1112561C34B004E757B /* SessionManager.swift */,
+				3182A10F2561C34B004E757B /* Stores */,
+				3182A1122561C34B004E757B /* View */,
 				3182A1042561C2A8004E757B /* models */,
 				3182A1002561C28E004E757B /* amplifyconfiguration.json */,
 				3182A0FF2561C28E004E757B /* awsconfiguration.json */,
-				31A75DD72561BD4800A799F8 /* HHCApp.swift */,
-				31A75DD92561BD4800A799F8 /* ContentView.swift */,
 				31A75DDB2561BD4800A799F8 /* Assets.xcassets */,
 				31A75DE02561BD4800A799F8 /* Info.plist */,
 				31A75DDD2561BD4800A799F8 /* Preview Content */,
+				3182A1572561CD67004E757B /* ImagePicker.swift */,
+				31A75DD52561BD4800A799F8 /* Products */,
 			);
 			path = HHC;
 			sourceTree = "<group>";
@@ -179,6 +318,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3182A13E2561C34C004E757B /* trips.json in Resources */,
+				3182A13D2561C34C004E757B /* covers.json in Resources */,
 				31A75DDF2561BD4800A799F8 /* Preview Assets.xcassets in Resources */,
 				31A75DDC2561BD4800A799F8 /* Assets.xcassets in Resources */,
 				3182A1012561C28E004E757B /* awsconfiguration.json in Resources */,
@@ -236,11 +377,31 @@
 			buildActionMask = 2147483647;
 			files = (
 				3182A10A2561C2A8004E757B /* Trip.swift in Sources */,
-				31A75DDA2561BD4800A799F8 /* ContentView.swift in Sources */,
+				3182A1362561C34C004E757B /* HeadingView.swift in Sources */,
+				3182A1582561CD67004E757B /* ImagePicker.swift in Sources */,
+				3182A1392561C34C004E757B /* TripDetailView.swift in Sources */,
+				3182A1342561C34C004E757B /* ConfirmationView.swift in Sources */,
+				3182A13C2561C34C004E757B /* CodableBundleExtension.swift in Sources */,
+				3182A1422561C34C004E757B /* SettingView.swift in Sources */,
+				3182A1312561C34C004E757B /* SettingsLabelView.swift in Sources */,
 				3182A1092561C2A8004E757B /* AmplifyModels.swift in Sources */,
+				3182A1372561C34C004E757B /* TripListItemView.swift in Sources */,
+				3182A1432561C34C004E757B /* ContentView.swift in Sources */,
+				3182A1332561C34C004E757B /* SignUpView.swift in Sources */,
+				3182A12E2561C34C004E757B /* TripStore.swift in Sources */,
+				3182A13A2561C34C004E757B /* InsetGalleryView.swift in Sources */,
+				3182A1382561C34C004E757B /* CoverImageView.swift in Sources */,
 				3182A10B2561C2A8004E757B /* Trip+Schema.swift in Sources */,
-				31A75DD82561BD4800A799F8 /* HHCApp.swift in Sources */,
+				3182A1352561C34C004E757B /* NewTripView.swift in Sources */,
+				3182A13B2561C34C004E757B /* TripExtension.swift in Sources */,
+				3182A13F2561C34C004E757B /* DashboardView.swift in Sources */,
+				3182A1402561C34C004E757B /* AdminView.swift in Sources */,
+				3182A1412561C34C004E757B /* HHCApp.swift in Sources */,
+				3182A15F2561EF2E004E757B /* CustomPickerView.swift in Sources */,
+				3182A12F2561C34C004E757B /* SessionManager.swift in Sources */,
+				3182A1322561C34C004E757B /* LoginView.swift in Sources */,
 				3182A10C2561C2A8004E757B /* Phase.swift in Sources */,
+				3182A1302561C34C004E757B /* SettingsRowView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
