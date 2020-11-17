@@ -14,7 +14,7 @@ struct TripDetailView: View {
         ScrollView(.vertical, showsIndicators: false) {
             VStack(alignment: .center, spacing: 20) {
             // IMAGE
-                Image(trip.coverImage)
+                Image(trip.coverImageKey)
                     .resizable()
                     .scaledToFit()
             // TITLE

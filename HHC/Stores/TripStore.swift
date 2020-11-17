@@ -9,7 +9,6 @@ import SwiftUI
 import Combine
 
 final class TripStore: ObservableObject {
-    @Published var trips = [Trip]()
     
     private enum Keys {
         static let name = "name"

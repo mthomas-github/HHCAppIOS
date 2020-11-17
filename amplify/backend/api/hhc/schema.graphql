@@ -7,15 +7,17 @@ enum Phase {
  }
  
 type Trip @model {
-  id: ID!
+   id: ID!
   name: String!
   description: String!
-  total: String
-  coverImage: String!
-  phase: Phase
+  total: Float
+  coverImageKey: String!
+  tripPhase: Phase
   startDate: AWSDateTime!
   endDate: AWSDateTime!
   tenative: Boolean!
   gallery: [String]
   members: [String]
+  maxSeats: Int
+  paymentPlan: Boolean
 }

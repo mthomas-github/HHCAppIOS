@@ -16,7 +16,6 @@ extension NumberFormatter {
 }
 
 struct NewTripView: View {
-    @EnvironmentObject var trip: TripStore
     @State var shouldShowImagePicker = false
     @State var shouldShowPicker = false
     @State var image: UIImage?
@@ -24,27 +23,36 @@ struct NewTripView: View {
     @State var galleryImages: [String] = []
     @State var show = false
     @State var selected : [SelectedImages] = []
+    @State var tripName: String = ""
+    @State var tripDescription: String = ""
+    @State var tripMaxSeats: Int = 50
+    @State var tripStartDate: Date = Date()
+    @State var tripEndDate: Date = Date()
+    @State var tripDatesTenative: Bool = true
+    @State var tripTotalCost: Double = 0.00
+    @State var hasPaymentPlan: Bool = false
     
+    let uploadImages = DispatchGroup()
     var body: some View {
         NavigationView {
             Form {
                 Section(header: Text("Trip Details")) {
-                    TextField("Trip Name", text: $trip.name)
-                    TextField("Trip Description", text: $trip.description)
-                    Stepper(value: $trip.maxPeople, in: 0...100) {
-                        Text("There Will be \(trip.maxPeople) Seats Open")
+                    TextField("Trip Name", text: $tripName)
+                    TextField("Trip Description", text: $tripDescription)
+                    Stepper(value: $tripMaxSeats, in: 0...100) {
+                        Text("There Will be \(tripMaxSeats) Seats Open")
                     }
                 }
                 Section(header: Text("Trip Dates")) {
-                    DatePicker("Trip Start Date", selection: $trip.startDate)
-                    DatePicker("Trip End Date", selection: $trip.endDate)
-                    Toggle(isOn: $trip.tenative) {
+                    DatePicker("Trip Start Date", selection: $tripStartDate)
+                    DatePicker("Trip End Date", selection: $tripEndDate)
+                    Toggle(isOn: $tripDatesTenative) {
                         Text("Date(s) Tenative?")
                     }
                 }
                 Section(header: Text("Trip Cost")) {
-                    TextField("Price", value: $trip.total, formatter: NumberFormatter.currency)
-                    Toggle(isOn: $trip.paymentPlan) {
+                    TextField("Price", value: $tripTotalCost, formatter: NumberFormatter.currency)
+                    Toggle(isOn: $hasPaymentPlan) {
                         Text("Payment Plan")
                     }
                 }
@@ -56,7 +64,7 @@ struct NewTripView: View {
                             .scaledToFit()
                         Spacer()
                     }
-                    Button(action: didTapButton, label: {
+                    Button(action: singleImageButtonTap, label: {
                         let imageName = self.image == nil
                             ? "photo"
                             : "icloud.and.arrow.up"
@@ -84,10 +92,7 @@ struct NewTripView: View {
                             } //: HSTACK
                         } //: SCROLL
                     }
-                    Button(action: {
-                        self.selected.removeAll()
-                        self.show.toggle()
-                    }, label: {
+                    Button(action: mutiplyImageButtonTap, label: {
                         let imageIcon = self.selected == []
                             ? "photo"
                             : "icloud.and.arrow.up"
@@ -102,15 +107,33 @@ struct NewTripView: View {
                         CustomPicker(selected: self.$selected, show: self.$show)
                     })
                 }
-                
+                Button(action: save, label: {
+                    /*@START_MENU_TOKEN@*/Text("Button")/*@END_MENU_TOKEN@*/
+                })
             }
+            .navigationBarTitle("New Trip")
         }
-        .navigationTitle("New Trip")
     }
     
-    func didTapButton() {
+    
+    func mutiplyImageButtonTap() {
+        if !self.selected.isEmpty {
+            
+            for select in selected {
+                uploadImages.enter()
+                upload(select.image)
+            }
+            uploadImages.notify(queue: .main) {
+                selected.removeAll()
+            }
+        } else {
+            show.toggle()
+        }
+    }
+    
+    
+    func singleImageButtonTap() {
         if let image = self.image {
-            //upload image
             upload(image)
         } else {
             shouldShowImagePicker.toggle()
@@ -128,9 +151,13 @@ struct NewTripView: View {
         _ = Amplify.Storage.uploadData(key: key, data: imageData) { result in
             switch result {
             case .success:
-                print("uploaded image")
-                coverImageKey = key
-                self.image = nil
+                if !self.selected.isEmpty {
+                    galleryImages.append(key)
+                    uploadImages.leave()
+                } else {
+                    coverImageKey = key
+                    self.image = nil
+                }
                 
             case .failure(let error):
                 print("Failed to upload - \(error)")
@@ -140,24 +167,24 @@ struct NewTripView: View {
     }
     
     func save() {
-        //print(text)
-        //        let trip = Trip(body: text)
-        //        Amplify.DataStore.save(trip) { result in
-        //            switch result {
-        //            case .success:
-        //                print("saved trip")
-        //            case .failure(let error):
-        //                print(error)
-        //            }
-        //
-        //        }
-        //        presentationMode.wrappedValue.dismiss()
+        let convertST = Temporal.DateTime(self.tripStartDate)
+        let convertET = Temporal.DateTime(self.tripEndDate)
+        let newTrip = Trip(name: self.tripName, description: self.tripDescription, total: self.tripTotalCost, coverImageKey: self.coverImageKey, tripPhase: Phase(rawValue: Phase.new.rawValue), startDate: convertST, endDate: convertET, tenative: self.tripDatesTenative, gallery: self.galleryImages, members: [""], maxSeats: self.tripMaxSeats, paymentPlan: self.hasPaymentPlan)
+        
+        Amplify.DataStore.save(newTrip) { result in
+            switch result {
+            case .success:
+                print("success")
+            case .failure(let error):
+                print("there was an error: \(error)")
+            }
+        }
         
     }
 }
+
 struct NewTripView_Previews: PreviewProvider {
-    static let trip = TripStore()
     static var previews: some View {
-        NewTripView().environmentObject(trip)
+        NewTripView()
     }
 }

@@ -12,7 +12,7 @@ struct TripListItemView: View {
     
     var body: some View {
         HStack(alignment: .center, spacing: 16) {
-            Image(trip.coverImage)
+            Image(trip.coverImageKey)
                 .resizable()
                 .scaledToFill()
                 .frame(width: 90, height: 90)
