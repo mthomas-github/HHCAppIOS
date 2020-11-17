@@ -7,14 +7,6 @@
 import Amplify
 import SwiftUI
 
-extension NumberFormatter {
-    static var currency: NumberFormatter {
-        let formatter = NumberFormatter()
-        formatter.numberStyle = .currency
-        return formatter
-    }
-}
-
 struct NewTripView: View {
     @State var shouldShowImagePicker = false
     @State var shouldShowPicker = false
@@ -23,36 +15,29 @@ struct NewTripView: View {
     @State var galleryImages: [String] = []
     @State var show = false
     @State var selected : [SelectedImages] = []
-    @State var tripName: String = ""
-    @State var tripDescription: String = ""
-    @State var tripMaxSeats: Int = 50
-    @State var tripStartDate: Date = Date()
-    @State var tripEndDate: Date = Date()
-    @State var tripDatesTenative: Bool = true
-    @State var tripTotalCost: Double = 0.00
-    @State var hasPaymentPlan: Bool = false
+    @ObservedObject var tripInput = TripInput()
     
     let uploadImages = DispatchGroup()
     var body: some View {
         NavigationView {
             Form {
                 Section(header: Text("Trip Details")) {
-                    TextField("Trip Name", text: $tripName)
-                    TextField("Trip Description", text: $tripDescription)
-                    Stepper(value: $tripMaxSeats, in: 0...100) {
-                        Text("There Will be \(tripMaxSeats) Seats Open")
+                    TextField("Trip Name", text: $tripInput.tripName)
+                    TextField("Trip Description", text: $tripInput.tripDescription)
+                    Stepper(value: $tripInput.tripMaxSeats, in: 0...100) {
+                        Text("There Will be \(tripInput.tripMaxSeats) Seats Open")
                     }
                 }
                 Section(header: Text("Trip Dates")) {
-                    DatePicker("Trip Start Date", selection: $tripStartDate)
-                    DatePicker("Trip End Date", selection: $tripEndDate)
-                    Toggle(isOn: $tripDatesTenative) {
+                    DatePicker("Trip Start Date", selection: $tripInput.tripStartDate)
+                    DatePicker("Trip End Date", selection: $tripInput.tripEndDate)
+                    Toggle(isOn: $tripInput.tripDatesTenative) {
                         Text("Date(s) Tenative?")
                     }
                 }
                 Section(header: Text("Trip Cost")) {
-                    TextField("Price", value: $tripTotalCost, formatter: NumberFormatter.currency)
-                    Toggle(isOn: $hasPaymentPlan) {
+                    TextField("Price", value: $tripInput.tripTotalCost, formatter: NumberFormatter.currency)
+                    Toggle(isOn: $tripInput.hasPaymentPlan) {
                         Text("Payment Plan")
                     }
                 }
@@ -108,7 +93,7 @@ struct NewTripView: View {
                     })
                 }
                 Button(action: save, label: {
-                    /*@START_MENU_TOKEN@*/Text("Button")/*@END_MENU_TOKEN@*/
+                    Text("Save Trip")
                 })
             }
             .navigationBarTitle("New Trip")
@@ -168,15 +153,16 @@ struct NewTripView: View {
     
     func save() {
         
-        let convertST = Temporal.DateTime(self.tripStartDate)
-        let convertET = Temporal.DateTime(self.tripEndDate)
-        let newTrip = Trip(name: self.tripName, description: self.tripDescription, total: self.tripTotalCost, coverImageKey: self.coverImageKey, tripPhase: Phase(rawValue: Phase.new.rawValue), startDate: convertST, endDate: convertET, tenative: self.tripDatesTenative, gallery: self.galleryImages, members: [""], maxSeats: self.tripMaxSeats, paymentPlan: self.hasPaymentPlan)
+        let convertST = Temporal.DateTime(self.tripInput.tripStartDate)
+        let convertET = Temporal.DateTime(self.tripInput.tripEndDate)
+        let newTrip = Trip(name: self.tripInput.tripName, description: self.tripInput.tripDescription, total: self.tripInput.tripTotalCost, coverImageKey: self.coverImageKey, tripPhase: Phase(rawValue: Phase.new.rawValue), startDate: convertST, endDate: convertET, tenative: self.tripInput.tripDatesTenative, gallery: self.galleryImages, members: [""], maxSeats: self.tripInput.tripMaxSeats, paymentPlan: self.tripInput.hasPaymentPlan)
         
 
         Amplify.DataStore.save(newTrip) { result in
             switch result {
             case .success:
                 print("success")
+                self.tripInput.clear()
             case .failure(let error):
                 print("there was an error: \(error)")
             }

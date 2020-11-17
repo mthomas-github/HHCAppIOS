@@ -39,6 +39,8 @@
 		3182A15F2561EF2E004E757B /* CustomPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3182A15E2561EF2E004E757B /* CustomPickerView.swift */; };
 		31A75DDC2561BD4800A799F8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 31A75DDB2561BD4800A799F8 /* Assets.xcassets */; };
 		31A75DDF2561BD4800A799F8 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 31A75DDE2561BD4800A799F8 /* Preview Assets.xcassets */; };
+		31EEC5AD256493BF004C25F5 /* TripInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31EEC5AC256493BF004C25F5 /* TripInput.swift */; };
+		31EEC5B0256493F6004C25F5 /* NumberFormatterExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31EEC5AF256493F6004C25F5 /* NumberFormatterExtension.swift */; };
 		9DB2DE7E9C7A50E2F2F5A9DE /* Pods_HHC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9F2634DA2B2DB4960C3CE7A /* Pods_HHC.framework */; };
 /* End PBXBuildFile section */
 
@@ -77,6 +79,8 @@
 		31A75DDB2561BD4800A799F8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		31A75DDE2561BD4800A799F8 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		31A75DE02561BD4800A799F8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		31EEC5AC256493BF004C25F5 /* TripInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripInput.swift; sourceTree = "<group>"; };
+		31EEC5AF256493F6004C25F5 /* NumberFormatterExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberFormatterExtension.swift; sourceTree = "<group>"; };
 		8F4872846A080451082B1887 /* Pods-HHC.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HHC.release.xcconfig"; path = "Target Support Files/Pods-HHC/Pods-HHC.release.xcconfig"; sourceTree = "<group>"; };
 		A9F2634DA2B2DB4960C3CE7A /* Pods_HHC.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HHC.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EAD0FD3C5C9338CC8607FA11 /* Pods-HHC.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HHC.debug.xcconfig"; path = "Target Support Files/Pods-HHC/Pods-HHC.debug.xcconfig"; sourceTree = "<group>"; };
@@ -178,6 +182,7 @@
 			children = (
 				3182A1232561C34C004E757B /* TripExtension.swift */,
 				3182A1242561C34C004E757B /* CodableBundleExtension.swift */,
+				31EEC5AF256493F6004C25F5 /* NumberFormatterExtension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -238,6 +243,7 @@
 				31A75DDD2561BD4800A799F8 /* Preview Content */,
 				3182A1572561CD67004E757B /* ImagePicker.swift */,
 				31A75DD52561BD4800A799F8 /* Products */,
+				31EEC5AC256493BF004C25F5 /* TripInput.swift */,
 			);
 			path = HHC;
 			sourceTree = "<group>";
@@ -383,10 +389,12 @@
 				3182A1342561C34C004E757B /* ConfirmationView.swift in Sources */,
 				3182A13C2561C34C004E757B /* CodableBundleExtension.swift in Sources */,
 				3182A1422561C34C004E757B /* SettingView.swift in Sources */,
+				31EEC5B0256493F6004C25F5 /* NumberFormatterExtension.swift in Sources */,
 				3182A1312561C34C004E757B /* SettingsLabelView.swift in Sources */,
 				3182A1092561C2A8004E757B /* AmplifyModels.swift in Sources */,
 				3182A1372561C34C004E757B /* TripListItemView.swift in Sources */,
 				3182A1432561C34C004E757B /* ContentView.swift in Sources */,
+				31EEC5AD256493BF004C25F5 /* TripInput.swift in Sources */,
 				3182A1332561C34C004E757B /* SignUpView.swift in Sources */,
 				3182A12E2561C34C004E757B /* TripStore.swift in Sources */,
 				3182A13A2561C34C004E757B /* InsetGalleryView.swift in Sources */,
