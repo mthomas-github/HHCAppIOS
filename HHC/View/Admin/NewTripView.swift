@@ -167,10 +167,12 @@ struct NewTripView: View {
     }
     
     func save() {
+        
         let convertST = Temporal.DateTime(self.tripStartDate)
         let convertET = Temporal.DateTime(self.tripEndDate)
         let newTrip = Trip(name: self.tripName, description: self.tripDescription, total: self.tripTotalCost, coverImageKey: self.coverImageKey, tripPhase: Phase(rawValue: Phase.new.rawValue), startDate: convertST, endDate: convertET, tenative: self.tripDatesTenative, gallery: self.galleryImages, members: [""], maxSeats: self.tripMaxSeats, paymentPlan: self.hasPaymentPlan)
         
+
         Amplify.DataStore.save(newTrip) { result in
             switch result {
             case .success:

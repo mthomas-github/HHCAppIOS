@@ -10,33 +10,37 @@ import SwiftUI
 struct CoverImageView: View {
     // MARK: - PROPERTIES
     let trips: [Trip]
-    @State var imageCache = [String: UIImage?]()
+    @State var imageCache: [UIImage] = []
     // MARK: - BODY
     var body: some View {
-        TabView{
-            ForEach(Array(imageCache.values), id: \.self) { image in
-                if let image = image {
+        if imageCache.isEmpty {
+            Text("Loading...")
+                .onAppear {
+                    downloadImages(for: trips)
+                }
+        }
+        else {
+            TabView {
+                ForEach(imageCache, id: \.self) { image in
                     Image(uiImage: image)
                         .resizable()
-                        .scaledToFit()
+                        .scaledToFill()
                 }
-            }//: LOOP
-        }//: TAB
-        .tabViewStyle(PageTabViewStyle())
-        .onAppear {
-            downloadImages(for: trips)
+            }
+            .tabViewStyle(PageTabViewStyle())
         }
     }
     
     func downloadImages(for trips: [Trip]) {
         for trip in trips {
-            _ = Amplify.Storage.downloadData(key: trip.coverImageKey) { result in
+            Amplify.Storage.downloadData(key: trip.coverImageKey) { result in
                 switch result {
                 case .success(let imageData):
-                    let image = UIImage(data: imageData)
-                    imageCache[trip.coverImageKey] = image
+                    guard let image = UIImage(data: imageData) else {
+                        return
+                    }
                     DispatchQueue.main.async {
-                        imageCache[trip.coverImageKey] = image
+                        imageCache.append(image)
                     }
                 case .failure(let error):
                     print("Failed to download image data - \(error)")

@@ -21,14 +21,11 @@ struct DashboardView: View {
         NavigationView {
             List {
                 if(trips.count >= 1) {
-                CoverImageView(trips: trips)
-                    .frame(height: 300)
-                    .listRowInsets(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0))
-                ForEach(trips) { trip in
-                    NavigationLink(destination: TripDetailView(trip: trip)) {
-                        TripListItemView(trip: trip)
-                    } // : LINK
-                } // : LOOP
+                    ForEach(trips) { trip in
+                        NavigationLink(destination: TripDetailView(trip: trip)) {
+                            TripListItemView(trip: trip)
+                        } // : LINK
+                    } // : LOOP
                 } else {
                     Text("No Trips")
                 }
@@ -58,7 +55,9 @@ struct DashboardView: View {
         Amplify.DataStore.query(Trip.self) { result in
             switch result {
             case .success(let trips):
-                self.trips = trips
+                DispatchQueue.main.async {
+                    self.trips = trips
+                }
             case .failure(let error):
                 print(error)
             }
@@ -75,7 +74,12 @@ struct DashboardView: View {
                 guard let trip = try? changes.decodeModel(as: Trip.self) else { return }
                 switch changes.mutationType {
                 case "create":
+                    if trips.contains(where: { $0.id == trip.id }) {
+                        print("Already Exist!!")
+                        return
+                    }
                     print("Created")
+                    self.trips.append(trip)
                 case "delete":
                     if let index = self.trips.firstIndex(of: trip) {
                         self.trips.remove(at: index)

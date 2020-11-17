@@ -114,7 +114,14 @@ final class SessionManager: ObservableObject {
         _ = Amplify.Auth.signOut { result in
             switch result {
             case .success:
-                print("Sign in")
+                Amplify.DataStore.clear() { result in
+                    switch result {
+                    case .success:
+                        print("Local Datasouce Clear")
+                    case .failure(let error):
+                        print("Data source clearing at problem: \(error)")
+                    }
+                }
             case .failure(let error):
                 print("Sign out error:", error)
             }
