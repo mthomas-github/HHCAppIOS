@@ -9,7 +9,6 @@ import SwiftUI
 
 struct ContentView: View {
     let user: AuthUser
-    @StateObject private var tripStore = TripStore()
     var body: some View {
         TabView {
             DashboardView()
@@ -17,12 +16,11 @@ struct ContentView: View {
                     Image(systemName: "airplane")
                     Text("Adventures")
                 }
-            NewTripView()
+            AdminView()
                 .tabItem {
                     Image(systemName: "key.icloud")
                     Text("Admin")
                 }
-                .environmentObject(tripStore)
         }//: TABVIEW
     }
 }

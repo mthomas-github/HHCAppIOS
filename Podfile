@@ -13,5 +13,7 @@ target 'HHC' do
 
   pod 'AmplifyPlugins/AWSAPIPlugin'
   pod 'AmplifyPlugins/AWSDataStorePlugin'
+
+  pod 'AwesomeEnum'
   
 end

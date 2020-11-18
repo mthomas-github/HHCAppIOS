@@ -10,77 +10,20 @@ import Combine
 import SwiftUI
 
 struct AdminView: View {
-    @State var trips = [Trip]()
-    
-    @State var showNewTrip = false
-    @State var observationToken: AnyCancellable?
-    
     var body: some View {
-        NavigationView {
-            ZStack {
-                List {
-                    ForEach(trips) { trip in
-                        Text(trip.name)
-                    }
-                    .onDelete(perform: deleteTrips)
-                }
-                
-                VStack {
-                    Spacer()
-                    
-                    Button(
-                        action: { showNewTrip.toggle() },
-                        label: {
-                            Image(systemName: "plus")
-                                .padding()
-                                .foregroundColor(.white)
-                                .background(Color.green)
-                                .clipShape(Circle())
-                        }
-                    )
-                    Spacer()
-                        .frame(height: 30)
-                }
-            }
-            .navigationTitle("Trips")
-            .sheet(isPresented: $showNewTrip) {
-                NewTripView()
+        List {
+            ScrollView(.vertical, showsIndicators: false) {
+                AdminBadgeView(imageName: "map-marker-alt", imageSize: 50, isLocked: false, title: "Trip", description: "Manage Trips", buttonAction: {print("Three")})
+                AdminBadgeView(imageName: "users", imageSize: 40, isLocked: false, title: "Members", description: "Manage Members", buttonAction: {print("Four")})
+                AdminBadgeView(imageName: "clipboard-user", imageSize: 50, isLocked: false, title: "Staff Members", description: "Manage Staff Members", buttonAction: {print("Five")})
+                AdminBadgeView(imageName: "cogs", imageSize: 40, isLocked: true, title: "App Settings", description: "Global App Settings", buttonAction: {print("Five")})
             }
         }
-        .onAppear {
-            getTrips()
-        }
-    }
-    
-    func getTrips() {
-        Amplify.DataStore.query(Trip.self) { result in
-            switch result {
-            case .success(let trips):
-                self.trips = trips
-                
-            case .failure(let error):
-                print(error)
-            }
-        }
-    }
-    
-    func deleteTrips(at indexSet: IndexSet) {
-        print("Deleted item at \(indexSet)")
-        var updatedTrips = trips
-        updatedTrips.remove(atOffsets: indexSet)
-        guard let trip = Set(updatedTrips).symmetricDifference(trips).first else { return }
-        
-        Amplify.DataStore.delete(trip) { result in
-            switch result {
-            case .success:
-                print("Deleted trip")
-            case .failure(let error):
-                print("Could not delete trip - \(error)")
-            }
-        }
-        
     }
 }
+
+
+
 
 struct AdminView_Previews: PreviewProvider {
     static var previews: some View {

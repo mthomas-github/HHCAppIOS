@@ -24,6 +24,7 @@ PODS:
     - AWSS3 (~> 2.19.0)
   - AppSyncRealTimeClient (1.4.2):
     - Starscream (~> 3.1.0)
+  - AwesomeEnum (2.2.1)
   - AWSAuthCore (2.19.1):
     - AWSCore (= 2.19.1)
   - AWSCognitoIdentityProvider (2.19.1):
@@ -54,12 +55,14 @@ DEPENDENCIES:
   - AmplifyPlugins/AWSCognitoAuthPlugin
   - AmplifyPlugins/AWSDataStorePlugin
   - AmplifyPlugins/AWSS3StoragePlugin
+  - AwesomeEnum
 
 SPEC REPOS:
   trunk:
     - Amplify
     - AmplifyPlugins
     - AppSyncRealTimeClient
+    - AwesomeEnum
     - AWSAuthCore
     - AWSCognitoIdentityProvider
     - AWSCognitoIdentityProviderASF
@@ -75,6 +78,7 @@ SPEC CHECKSUMS:
   Amplify: 45e6a71e421e454eb075b160a74e67443af11e76
   AmplifyPlugins: 8ca498863cd0c59c96f2c13bc23ddfc431a852c8
   AppSyncRealTimeClient: 7fb160294d067b6c0c4b3c4ab91e953fd4cfba30
+  AwesomeEnum: 9283d55c3d43eeb694168665609613df108662f8
   AWSAuthCore: 387c5e3482edbbb0fe754fa110a2a0203c783432
   AWSCognitoIdentityProvider: e6932c709d3e0b234128aeb5f2052c9bf1032d8d
   AWSCognitoIdentityProviderASF: 749f58b75e69f7f0144b9d38539525562b843d34
@@ -86,6 +90,6 @@ SPEC CHECKSUMS:
   SQLite.swift: d2b4642190917051ce6bd1d49aab565fe794eea3
   Starscream: 4bb2f9942274833f7b4d296a55504dcfc7edb7b0
 
-PODFILE CHECKSUM: 55fb42b05cbf41605db4c0c61b07cdc03c978aae
+PODFILE CHECKSUM: 36d45ace8d52c13d6eeed00e4582850a3deb98aa
 
 COCOAPODS: 1.10.0
