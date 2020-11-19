@@ -19,7 +19,6 @@
 		3182A1322561C34C004E757B /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3182A1172561C34B004E757B /* LoginView.swift */; };
 		3182A1332561C34C004E757B /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3182A1182561C34B004E757B /* SignUpView.swift */; };
 		3182A1342561C34C004E757B /* ConfirmationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3182A1192561C34B004E757B /* ConfirmationView.swift */; };
-		3182A1352561C34C004E757B /* NewTripView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3182A11B2561C34B004E757B /* NewTripView.swift */; };
 		3182A1362561C34C004E757B /* HeadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3182A11D2561C34B004E757B /* HeadingView.swift */; };
 		3182A1372561C34C004E757B /* TripListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3182A11E2561C34B004E757B /* TripListItemView.swift */; };
 		3182A1382561C34C004E757B /* CoverImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3182A11F2561C34B004E757B /* CoverImageView.swift */; };
@@ -38,6 +37,11 @@
 		3182A15F2561EF2E004E757B /* CustomPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3182A15E2561EF2E004E757B /* CustomPickerView.swift */; };
 		31A75DDC2561BD4800A799F8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 31A75DDB2561BD4800A799F8 /* Assets.xcassets */; };
 		31A75DDF2561BD4800A799F8 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 31A75DDE2561BD4800A799F8 /* Preview Assets.xcassets */; };
+		31BF757F2565CA9B00D62C24 /* AdminTripView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31BF757E2565CA9B00D62C24 /* AdminTripView.swift */; };
+		31BF75822565CE9B00D62C24 /* AdminNewTripView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31BF75812565CE9B00D62C24 /* AdminNewTripView.swift */; };
+		31BF7586256603E000D62C24 /* AdminMemberListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31BF7585256603E000D62C24 /* AdminMemberListView.swift */; };
+		31BF758E2566046500D62C24 /* AdminStaffListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31BF758D2566046500D62C24 /* AdminStaffListView.swift */; };
+		31BF7593256604B100D62C24 /* AppGlobalSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31BF7592256604B100D62C24 /* AppGlobalSettingsView.swift */; };
 		31EEC5AD256493BF004C25F5 /* TripInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31EEC5AC256493BF004C25F5 /* TripInput.swift */; };
 		31EEC5B0256493F6004C25F5 /* NumberFormatterExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31EEC5AF256493F6004C25F5 /* NumberFormatterExtension.swift */; };
 		31EEC5B32564A0C0004C25F5 /* AdminTripListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31EEC5B22564A0C0004C25F5 /* AdminTripListView.swift */; };
@@ -64,7 +68,6 @@
 		3182A1172561C34B004E757B /* LoginView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		3182A1182561C34B004E757B /* SignUpView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 		3182A1192561C34B004E757B /* ConfirmationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfirmationView.swift; sourceTree = "<group>"; };
-		3182A11B2561C34B004E757B /* NewTripView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewTripView.swift; sourceTree = "<group>"; };
 		3182A11D2561C34B004E757B /* HeadingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeadingView.swift; sourceTree = "<group>"; };
 		3182A11E2561C34B004E757B /* TripListItemView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TripListItemView.swift; sourceTree = "<group>"; };
 		3182A11F2561C34B004E757B /* CoverImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoverImageView.swift; sourceTree = "<group>"; };
@@ -85,6 +88,11 @@
 		31A75DDB2561BD4800A799F8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		31A75DDE2561BD4800A799F8 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		31A75DE02561BD4800A799F8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		31BF757E2565CA9B00D62C24 /* AdminTripView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminTripView.swift; sourceTree = "<group>"; };
+		31BF75812565CE9B00D62C24 /* AdminNewTripView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminNewTripView.swift; sourceTree = "<group>"; };
+		31BF7585256603E000D62C24 /* AdminMemberListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminMemberListView.swift; sourceTree = "<group>"; };
+		31BF758D2566046500D62C24 /* AdminStaffListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminStaffListView.swift; sourceTree = "<group>"; };
+		31BF7592256604B100D62C24 /* AppGlobalSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppGlobalSettingsView.swift; sourceTree = "<group>"; };
 		31EEC5AC256493BF004C25F5 /* TripInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripInput.swift; sourceTree = "<group>"; };
 		31EEC5AF256493F6004C25F5 /* NumberFormatterExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberFormatterExtension.swift; sourceTree = "<group>"; };
 		31EEC5B22564A0C0004C25F5 /* AdminTripListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminTripListView.swift; sourceTree = "<group>"; };
@@ -173,8 +181,10 @@
 		3182A11A2561C34B004E757B /* Admin */ = {
 			isa = PBXGroup;
 			children = (
-				3182A11B2561C34B004E757B /* NewTripView.swift */,
-				31EEC5B22564A0C0004C25F5 /* AdminTripListView.swift */,
+				31BF75912566049C00D62C24 /* Settings */,
+				31BF758C2566044300D62C24 /* Trips */,
+				31BF758B2566043700D62C24 /* Staff */,
+				31BF758A2566043000D62C24 /* Member */,
 				31EEC5B62564A957004C25F5 /* AdminBadgeView.swift */,
 			);
 			path = Admin;
@@ -270,6 +280,40 @@
 				31A75DDE2561BD4800A799F8 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		31BF758A2566043000D62C24 /* Member */ = {
+			isa = PBXGroup;
+			children = (
+				31BF7585256603E000D62C24 /* AdminMemberListView.swift */,
+			);
+			path = Member;
+			sourceTree = "<group>";
+		};
+		31BF758B2566043700D62C24 /* Staff */ = {
+			isa = PBXGroup;
+			children = (
+				31BF758D2566046500D62C24 /* AdminStaffListView.swift */,
+			);
+			path = Staff;
+			sourceTree = "<group>";
+		};
+		31BF758C2566044300D62C24 /* Trips */ = {
+			isa = PBXGroup;
+			children = (
+				31BF75812565CE9B00D62C24 /* AdminNewTripView.swift */,
+				31BF757E2565CA9B00D62C24 /* AdminTripView.swift */,
+				31EEC5B22564A0C0004C25F5 /* AdminTripListView.swift */,
+			);
+			path = Trips;
+			sourceTree = "<group>";
+		};
+		31BF75912566049C00D62C24 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				31BF7592256604B100D62C24 /* AppGlobalSettingsView.swift */,
+			);
+			path = Settings;
 			sourceTree = "<group>";
 		};
 		31EEC5CE2564C7D1004C25F5 /* FontAwesome */ = {
@@ -427,9 +471,13 @@
 				3182A1392561C34C004E757B /* TripDetailView.swift in Sources */,
 				3182A1342561C34C004E757B /* ConfirmationView.swift in Sources */,
 				3182A13C2561C34C004E757B /* CodableBundleExtension.swift in Sources */,
+				31BF7593256604B100D62C24 /* AppGlobalSettingsView.swift in Sources */,
 				3182A1422561C34C004E757B /* SettingView.swift in Sources */,
+				31BF758E2566046500D62C24 /* AdminStaffListView.swift in Sources */,
+				31BF757F2565CA9B00D62C24 /* AdminTripView.swift in Sources */,
 				31EEC5B0256493F6004C25F5 /* NumberFormatterExtension.swift in Sources */,
 				3182A1312561C34C004E757B /* SettingsLabelView.swift in Sources */,
+				31BF75822565CE9B00D62C24 /* AdminNewTripView.swift in Sources */,
 				3182A1092561C2A8004E757B /* AmplifyModels.swift in Sources */,
 				3182A1372561C34C004E757B /* TripListItemView.swift in Sources */,
 				3182A1432561C34C004E757B /* ContentView.swift in Sources */,
@@ -440,7 +488,7 @@
 				3182A1382561C34C004E757B /* CoverImageView.swift in Sources */,
 				3182A10B2561C2A8004E757B /* Trip+Schema.swift in Sources */,
 				31EEC5B72564A957004C25F5 /* AdminBadgeView.swift in Sources */,
-				3182A1352561C34C004E757B /* NewTripView.swift in Sources */,
+				31BF7586256603E000D62C24 /* AdminMemberListView.swift in Sources */,
 				3182A13B2561C34C004E757B /* TripExtension.swift in Sources */,
 				3182A13F2561C34C004E757B /* DashboardView.swift in Sources */,
 				3182A1402561C34C004E757B /* AdminView.swift in Sources */,

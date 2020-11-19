@@ -14,9 +14,7 @@ struct AdminBadgeView: View {
     let isLocked: Bool
     let title: String
     let description: String
-    let buttonAction: () -> Void
     var body: some View {
-        Button(action: buttonAction, label: {
             VStack {
                 HStack(spacing: 15) {
                     FAText(iconName: imageName, size: imageSize ?? 50)
@@ -25,17 +23,19 @@ struct AdminBadgeView: View {
                         .background(Color.green)
                         .cornerRadius(10)
                         .addVerifiedBadge(isLocked)
+                        .foregroundColor(.white)
                     VStack(alignment: .leading) {
-                        Text(title).font(.title)
+                        Text(title)
+                            .font(.title)
+                            .foregroundColor(.white)
                         Text(description)
+                            .foregroundColor(.white)
                     } //: VSTACK
                     Spacer()
                 } //: HSTACK
                 Spacer()
             } //: VSTACK
             .padding()
-        })
-        .foregroundColor(.white)
     }
 }
 
@@ -53,6 +53,6 @@ extension View {
 
 struct AdminBadgeView_Previews: PreviewProvider {
     static var previews: some View {
-        AdminBadgeView(imageName: "users", imageSize: 30, isLocked: true, title: "Add Trip", description: "Add New Trip", buttonAction: {print("Test")})
+        AdminBadgeView(imageName: "users", imageSize: 30, isLocked: true, title: "Add Trip", description: "Add New Trip")
     }
 }

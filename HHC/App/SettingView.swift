@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct SettingView: View {
-    @Environment(\.presentationMode) var presentationMode
     
     @ObservedObject var sessionManager = SessionManager()
     
@@ -82,18 +81,10 @@ struct SettingView: View {
                         SettingsRowView(name: "Version", content: appVersionString)
                         Button("Sign Out", action: {
                             sessionManager.signOut()
-                            presentationMode.wrappedValue.dismiss()
                         })
                     }
                 }//: VSTACK
                 .navigationBarTitle(Text("Settings"), displayMode: .large)
-                .navigationBarItems(
-                    trailing:
-                        Button(action: {
-                            presentationMode.wrappedValue.dismiss()
-                        }) {
-                            Image(systemName: "xmark")
-                        })
                 .padding()
             }//: SCROLL
         } //: NAVAGATION

@@ -21,6 +21,11 @@ struct ContentView: View {
                     Image(systemName: "key.icloud")
                     Text("Admin")
                 }
+            SettingView()
+                .tabItem {
+                    Image(systemName: "slider.horizontal.3")
+                    Text("My Profile")
+                }
         }//: TABVIEW
     }
 }

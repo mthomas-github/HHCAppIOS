@@ -31,17 +31,6 @@ struct DashboardView: View {
                 }
             } // : LIST
             .navigationTitle("Trips")
-            .navigationBarItems(
-                trailing:
-                    Button(action: {
-                        isShowingSettings = true
-                    }) {
-                        Image(systemName: "slider.horizontal.3")
-                    } // : BUTTON
-                    .sheet(isPresented: $isShowingSettings) {
-                        SettingView()
-                    }
-            )
         } // : NAVIGATION
         .navigationViewStyle(StackNavigationViewStyle())
         .onAppear {
