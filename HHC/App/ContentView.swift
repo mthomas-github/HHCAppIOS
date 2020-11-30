@@ -9,6 +9,9 @@ import SwiftUI
 
 struct ContentView: View {
     let user: AuthUser
+    let groupName: String
+    @ObservedObject var sessionManager = SessionManager()
+    
     var body: some View {
         TabView {
             DashboardView()
@@ -16,16 +19,18 @@ struct ContentView: View {
                     Image(systemName: "airplane")
                     Text("Adventures")
                 }
-            AdminView()
-                .tabItem {
-                    Image(systemName: "key.icloud")
-                    Text("Admin")
-                }
             SettingView()
                 .tabItem {
                     Image(systemName: "slider.horizontal.3")
                     Text("My Profile")
                 }
+            if(groupName == "Admin") {
+            AdminView()
+                .tabItem {
+                    Image(systemName: "key.icloud")
+                    Text("Admin")
+                }
+            }
         }//: TABVIEW
     }
 }
@@ -37,6 +42,6 @@ struct ContentView_Previews: PreviewProvider {
     }
     
     static var previews: some View {
-        ContentView(user: DummyUser())
+        ContentView(user: DummyUser(), groupName: "Admin")
     }
 }

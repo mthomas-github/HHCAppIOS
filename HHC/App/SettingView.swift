@@ -10,7 +10,6 @@ import SwiftUI
 struct SettingView: View {
     
     @ObservedObject var sessionManager = SessionManager()
-    
     let appVersionString: String = Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as! String
     
     @AppStorage("isDeleting") var isDeleting: Bool = false
@@ -18,6 +17,9 @@ struct SettingView: View {
     @AppStorage("email") var email = ""
     //@State var manager = LoginManager()
     
+    init() {
+        sessionManager.fetchAttributes()
+    }
     var body: some View {
         NavigationView {
             ScrollView(.vertical, showsIndicators: false) {
@@ -45,9 +47,8 @@ struct SettingView: View {
                         label: SettingsLabelView(labelText: "User Info", labelImage: "person.icloud.fill")
                     ) {
                         Divider().padding(.vertical, 4)
-                        SettingsRowView(name: "Email", content: "mthomas2270@gmail.com")
-                        SettingsRowView(name: "First Name", content: "Michael Thomas")
-                        SettingsRowView(name: "Last Name", content: "Michael Thomas")
+                        SettingsRowView(name: "Email", content: sessionManager.userAttributes["email"])
+                        SettingsRowView(name: "Name", content: sessionManager.userAttributes["name"])
                     }
                     
                     //MARK: - SECTION 3

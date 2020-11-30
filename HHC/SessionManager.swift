@@ -6,6 +6,7 @@
 //
 
 import Amplify
+import Combine
 import SwiftUI
 
 enum AuthState {
@@ -15,18 +16,75 @@ enum AuthState {
     case session(user: AuthUser)
 }
 
+struct Response: Decodable {
+    let Groups: [GroupName]
+}
+struct GroupName: Decodable {
+    let GroupName: String
+}
+
 final class SessionManager: ObservableObject {
     
     @Published var authState: AuthState = .login
     @Environment(\.presentationMode) var presentationMode
+    @Published var userAttributes: [String:String] = [:]
+    @Published var userGroup: String = ""
     
     func getCurrentAuthUser() {
         if let user = Amplify.Auth.getCurrentUser() {
-            print("Found User....")
             authState = .session(user: user)
+            self.getMemberGroup()
         } else {
             print("Cannot Find User")
             authState = .login
+        }
+    }
+    
+    func getMemberGroup() {
+        let authUser = Amplify.Auth.getCurrentUser()!.username
+        if authUser != "" {
+        let request = RESTRequest(apiName: "AdminQueries", path: "/listGroupsForUser", headers: ["Content-Type" : "application/json"], queryParameters: ["username" : authUser ])
+        Amplify
+            .API
+            .get(request: request) { result in
+                switch result {
+                case .success(let groups):
+                    let groups = try! JSONDecoder().decode(Response.self, from: groups)
+                    DispatchQueue.main.async {
+                        self.userGroup = groups.Groups[0].GroupName
+                    }
+                case .failure(let apiError):
+                    print("Failed", apiError)
+                }
+            }
+        }
+    }
+        
+    func fetchAttributes() {
+        Amplify.Auth.fetchUserAttributes() { result in
+            switch result {
+            case .success(let attributes):
+                attributes.forEach { a in
+                    switch a.key {
+                    case AuthUserAttributeKey.email:
+                        DispatchQueue.main.async {
+                            self.userAttributes[a.key.rawValue] = a.value
+                        }
+                    case AuthUserAttributeKey.name:
+                        DispatchQueue.main.async {
+                            self.userAttributes[a.key.rawValue] = a.value
+                        }
+                    case AuthUserAttributeKey.unknown("sub"):
+                        DispatchQueue.main.async {
+                            self.userAttributes["userId"] = a.value
+                        }
+                    default:
+                        break
+                    }
+                }
+            case .failure(let error):
+                print(error)
+            }
         }
     }
     

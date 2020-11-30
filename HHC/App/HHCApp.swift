@@ -11,12 +11,12 @@ import SwiftUI
 @main
 struct HHCApp: App {
     @ObservedObject var sessionManager = SessionManager()
-    
     // add a default initializer and configure Amplify
     public init() {
         configureAmplify()
         sessionManager.getCurrentAuthUser()
         sessionManager.observeAuthEvents()
+        //sessionManager.getMemberGroup()
     }
     
     var body: some Scene {
@@ -32,7 +32,7 @@ struct HHCApp: App {
                 ConfirmationView(username: username)
                     .environmentObject(sessionManager)
             case .session(let user):
-                ContentView(user: user)
+                ContentView(user: user, groupName: sessionManager.userGroup)
                     .environmentObject(sessionManager)
             }
         }

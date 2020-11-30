@@ -30,8 +30,13 @@
       "AmplifyAppId": "d35gzd7uwrkl6y"
     },
     "categories": {
+      "function": {
+        "hhc1ec508fa1ec508faPostConfirmation": {
+          "GROUP": "NonMember"
+        }
+      },
       "auth": {
-        "hhcfb5c7a7f": {}
+        "hhc1ec508fa1ec508fa": {}
       }
     }
   }

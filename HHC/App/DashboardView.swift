@@ -14,6 +14,7 @@ struct DashboardView: View {
     @State private var isShowingSettings: Bool = false
     @State private var isLoading = false
     @State var observationToken: AnyCancellable?
+    @State var HeaderText: String = "No Trips"
     @ObservedObject var sessionManager = SessionManager()
     
     
@@ -27,15 +28,19 @@ struct DashboardView: View {
                         } // : LINK
                     } // : LOOP
                 } else {
-                    Text("No Trips")
+                    Text(HeaderText)
                 }
             } // : LIST
             .navigationTitle("Trips")
         } // : NAVIGATION
         .navigationViewStyle(StackNavigationViewStyle())
         .onAppear {
+            if(sessionManager.userGroup != "" || sessionManager.userGroup != "NonMember") {
             getTrips()
             observeTrips()
+            } else {
+                self.HeaderText = "Please Active Account"
+            }
         }
         
     }
